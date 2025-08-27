@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* --- iPhone 13 tuning --- */
     :root{
       --violet-25:#f7f2ff; --violet-50:#efe9ff; --violet-100:#e3d8ff;
       --violet-200:#cbb8ff; --violet-300:#b79cff; --violet-400:#a07cff;
@@ -24,7 +24,6 @@
       --card:#1a1036; --card-glass:rgba(26,16,54,.62);
       --shadow: 0 12px 26px rgba(17,9,35,.55), 0 8px 20px rgba(160,124,255,.18);
       --radius: 24px;
-      --edge: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
       --gutter: clamp(16px, 4vw, 22px);
     }
     *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
@@ -88,7 +87,6 @@
       background:linear-gradient(180deg, rgba(160,124,255,.14), rgba(160,124,255,.08)); color:var(--violet-50); margin-top:10px }
     .detail strong{ color:#fff; display:block }
 
-    /* Photos section (sequential reveal) */
     .photos{ width:min(420px, 92vw); margin-inline:auto; display:grid; gap:14px; padding: 0 var(--gutter) 22px; }
     figure{ margin:0; padding:0; position:relative; overflow:hidden; border-radius:16px; border:1px solid rgba(160,124,255,.35);
             background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04)); }
@@ -98,7 +96,6 @@
     figure figcaption{ position:absolute; left:0; bottom:0; right:0; padding:10px 12px; font-size:12px; color:#eee;
                        background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.24)); }
 
-    /* Code gate */
     .gate{ position:fixed; inset:0; display:grid; place-items:center; background: linear-gradient(180deg, rgba(14,7,32,.84), rgba(14,7,32,.76));
             backdrop-filter: blur(4px); z-index:50; }
     .panel{ width:min(420px, 92vw); background:linear-gradient(180deg, rgba(26,16,54,.88), rgba(26,16,54,.78));
@@ -120,7 +117,6 @@
   </style>
 </head>
 <body>
-  <!-- Glimmering aurora -->
   <div class="sky" aria-hidden="true">
     <span style="top:4%; left:-8%; --dur:48s; --rot:8deg; --sk:-8deg;"></span>
     <span style="top:-6%; right:-6%; --dur:58s; --rot:-6deg; --sk:6deg;"></span>
@@ -131,7 +127,6 @@
   <div class="sparkles" id="sparkles" aria-hidden="true"></div>
   <div class="sheen" aria-hidden="true"></div>
 
-  <!-- Passcode Gate -->
   <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gtitle">
     <div class="panel">
       <h2 id="gtitle">Jeje’s Surprise</h2>
@@ -145,7 +140,6 @@
     </div>
   </div>
 
-  <!-- Content -->
   <div class="viewport">
     <div class="wrap">
       <section class="card title" aria-label="Intro">
@@ -180,34 +174,34 @@
 
     <section class="photos" aria-label="Our moments">
       <figure>
-        <img src="img/photo1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 1 (placeholder)">
-        <figcaption>“You, me, and the first laugh of the night.”</figcaption>
+        <img src="img/01-berlin-church.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="First church date in Berlin">
+        <figcaption>First church date in Berlin</figcaption>
       </figure>
       <figure>
-        <img src="img/photo2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 2 (placeholder)">
-        <figcaption>Somewhere between shy smiles and forever.</figcaption>
+        <img src="img/02-niki-paris.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Watching NIKI in Paris">
+        <figcaption>Watching NIKI in Paris</figcaption>
       </figure>
       <figure>
-        <img src="img/photo3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 3 (placeholder)">
-        <figcaption>Hands intertwined, city lights agreeing with us.</figcaption>
+        <img src="img/03-rome.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Casual selfie in Rome">
+        <figcaption>Casual selfie in Rome</figcaption>
       </figure>
       <figure>
-        <img src="img/photo4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 4 (placeholder)">
-        <figcaption>A quiet moment that said everything.</figcaption>
+        <img src="img/04-mt-titlis-gondola.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Gondola in Mt. Titlis">
+        <figcaption>Gondola in Mt. Titlis</figcaption>
       </figure>
       <figure>
-        <img src="img/photo5.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 5 (placeholder)">
-        <figcaption>Two hearts, one favorite corner.</figcaption>
+        <img src="img/05-re-helltrain.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="RE Helltrain adventure">
+        <figcaption>RE Helltrain adventure</figcaption>
       </figure>
       <figure>
-        <img src="img/photo6.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 6 (placeholder)">
-        <figcaption>Here’s to our next thousand small adventures.</figcaption>
+        <img src="img/06-disneyland-paris.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Disneyland Paris">
+        <figcaption>Disneyland Paris</figcaption>
       </figure>
+
     </section>
   </div>
 
   <script>
-    // --- Config ---
     const CONFIG = {
       herName: "Jeje",
       yourName: "CJ",
@@ -218,14 +212,12 @@
       passcode: "29082023"
     };
 
-    // iOS viewport fix
     function setVh(){
       document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
     }
     window.addEventListener('resize', setVh); setVh();
 
-    // Sparkles
-    (function sparkles() {
+    (function sparkles(){
       const host = document.getElementById('sparkles');
       const N = 90;
       for (let i=0;i<N;i++) {
@@ -238,7 +230,6 @@
       }
     })();
 
-    // Gate
     const gate = document.getElementById('gate');
     const codeInput = document.getElementById('code');
     const err = document.getElementById('err');
@@ -249,6 +240,7 @@
       if (val === CONFIG.passcode) {
         if (remember.checked) localStorage.setItem('anniv_unlocked', '1');
         gate.classList.add('hidden');
+        try { navigator.vibrate && navigator.vibrate([8, 24, 8]); } catch(e) {}
       } else {
         err.textContent = "That didn’t match — think of the day we began (DDMMYYYY).";
         gate.querySelector('.panel').classList.remove('shake'); void gate.offsetWidth; gate.querySelector('.panel').classList.add('shake');
@@ -259,21 +251,23 @@
     codeInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') tryUnlock(); });
     unlockIfRemembered();
 
-    // Setup UI
     function fmtDate(d){ return d.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric'}) + " · " + d.toLocaleTimeString(undefined, {hour:'numeric', minute:'2-digit'}); }
     function updateUI(){
       document.getElementById('mapsLink').href = CONFIG.mapLink;
       document.getElementById('mapsLink2').href = CONFIG.mapLink;
       const start = new Date(CONFIG.dateTime);
       document.getElementById('whenText').textContent = fmtDate(start);
-      const text = `Our 2nd anniversary dinner at ${CONFIG.placeLabel} — ${fmtDate(start)}.\n${CONFIG.note}\n\nMaps: ${CONFIG.mapLink}`;
+      const text = `Our 2nd anniversary dinner at ${CONFIG.placeLabel} — ${fmtDate(start)}.
+${CONFIG.note}
+
+Maps: ${CONFIG.mapLink}`;
       document.getElementById('shareBtn').addEventListener('click', async ()=>{
-        try{ if(navigator.share){ await navigator.share({title:"Anniversary Dinner", text, url: location.href}); } else { await navigator.clipboard.writeText(text + "\n" + location.href); alert("Copied details to clipboard 💜"); } }catch(e){}
+        try{ if(navigator.share){ await navigator.share({title:"Anniversary Dinner", text, url: location.href}); }
+             else { await navigator.clipboard.writeText(text + "\n" + location.href); alert("Copied details to clipboard 💜"); } }catch(e){}
       });
     }
     updateUI();
 
-    // Photo reveal one-by-one with small stagger
     const figures = Array.from(document.querySelectorAll('figure'));
     const io = new IntersectionObserver((entries)=>{
       const toReveal = entries.filter(e=> e.isIntersecting && !e.target.classList.contains('revealed')).map(e=> e.target);
