@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CJ ♥ Jeje — 2nd Anniversary</title>
+  <meta name="theme-color" content="#1a1036">
+  <meta name="description" content="A glimmering aurora invite for our 2nd anniversary at WabiSabi (MD Place).">
+  <meta property="og:title" content="A little love note — CJ ♥ Jeje">
+  <meta property="og:description" content="Enter the secret code to open your surprise.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* --- iPhone 13 tuning --- */
+    :root{
+      --violet-25:#f7f2ff; --violet-50:#efe9ff; --violet-100:#e3d8ff;
+      --violet-200:#cbb8ff; --violet-300:#b79cff; --violet-400:#a07cff;
+      --violet-500:#8a5eff; --violet-600:#7347e8; --violet-700:#5c36c2;
+      --ink:#e9e6f3; --ink-soft:#bfb4cc; --bg:#0e0720;
+      --card:#1a1036; --card-glass:rgba(26,16,54,.62);
+      --shadow: 0 12px 26px rgba(17,9,35,.55), 0 8px 20px rgba(160,124,255,.18);
+      --radius: 24px;
+      --edge: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+      --gutter: clamp(16px, 4vw, 22px);
+    }
+    *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family:'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background: var(--bg);
+      overflow-x: hidden;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    .viewport{ min-height:100dvh; min-height:100svh; display:flex; flex-direction:column; }
+    /* Aurora + glimmer */
+    .sky, .sparkles{ position:fixed; inset:0; pointer-events:none; z-index:-1; }
+    .sky{ filter: blur(42px) saturate(115%); opacity:.95; }
+    .sky span{
+      position:absolute; width:68vw; height:60vh; border-radius:50%;
+      mix-blend-mode:screen; opacity:.75;
+      background: radial-gradient(60% 70% at 50% 50%, rgba(182,156,255,.36), rgba(130,110,255,.22) 50%, rgba(0,0,0,0) 70%);
+      animation: drift var(--dur,48s) var(--delay,0s) ease-in-out infinite alternate;
+      transform: rotate(var(--rot,6deg)) skewX(var(--sk, -6deg));
+    }
+    .sky span:nth-child(2){ background: radial-gradient(60% 70%, rgba(218,204,255,.32), rgba(168,138,255,.20) 55%, transparent 75%); }
+    .sky span:nth-child(3){ background: radial-gradient(60% 70%, rgba(164,140,255,.34), rgba(116,92,255,.18) 55%, transparent 75%); }
+    .sky span:nth-child(4){ background: radial-gradient(60% 70%, rgba(236,224,255,.26), rgba(176,150,255,.18) 55%, transparent 75%); }
+    .sky span:nth-child(5){ background: radial-gradient(60% 70%, rgba(188,162,255,.33), rgba(140,112,255,.20) 55%, transparent 75%); }
+    @keyframes drift{ 0%{transform:translate3d(-16vw,6vh,0) rotate(var(--rot)) skewX(var(--sk));} 100%{transform:translate3d(16vw,-8vh,0) rotate(calc(var(--rot) * -1)) skewX(calc(var(--sk) * -1));} }
+    .sparkles i{
+      position:absolute; width:2px; height:2px; border-radius:50%; background:#fff; opacity:.85;
+      animation: twinkle calc(3s + 2s*var(--r)) ease-in-out infinite;
+      transform: translate3d(var(--x), var(--y), 0) scale(var(--s));
+      box-shadow: 0 0 calc(6px + 4px*var(--s)) rgba(255,255,255,.8);
+    }
+    @keyframes twinkle{ 0%,100%{opacity:.12} 50%{opacity:.9} }
+    .sheen{
+      position:fixed; inset:-20% -20%;
+      background: conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,.02), rgba(255,255,255,.08), rgba(255,255,255,.02));
+      mix-blend-mode:screen; animation: sweep 14s linear infinite; pointer-events:none; z-index:-1;
+    }
+    @keyframes sweep{ from{transform:translateX(-6%)} to{transform:translateX(6%)} }
+
+    .wrap{ display:grid; place-items:start center; gap:16px; padding: var(--gutter); }
+    .card{
+      width:min(420px, 92vw); background:var(--card-glass); border:1px solid rgba(160,124,255,.35);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; backdrop-filter: blur(10px);
+    }
+    .title{ text-align:center }
+    h1{ font-family:'Great Vibes', cursive; font-size: clamp(36px, 8.4vw, 56px); margin:0 0 6px; color:#fff; text-shadow:0 10px 28px rgba(160,124,255,.32);}
+    .tag{ margin:0; text-align:center; color:var(--violet-100); font-size:14px; }
+
+    .note{ margin-top:8px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04)); border:1px dashed rgba(160,124,255,.5); border-radius:16px; padding:14px; }
+    .btns{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px }
+    .btn{
+      appearance:none; border:0; border-radius:14px; padding:12px 14px; font-weight:600;
+      background:linear-gradient(135deg, var(--violet-500), var(--violet-400)); color:#fff; box-shadow:0 6px 18px rgba(92,54,194,.40);
+    }
+    .btn.secondary{ background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.12)); color:var(--violet-25); border:1px solid rgba(160,124,255,.6)}
+
+    .detail{ display:flex; gap:12px; align-items:flex-start; border-radius:14px; padding:12px 14px; border:1px solid rgba(160,124,255,.35);
+      background:linear-gradient(180deg, rgba(160,124,255,.14), rgba(160,124,255,.08)); color:var(--violet-50); margin-top:10px }
+    .detail strong{ color:#fff; display:block }
+
+    /* Photos section (sequential reveal) */
+    .photos{ width:min(420px, 92vw); margin-inline:auto; display:grid; gap:14px; padding: 0 var(--gutter) 22px; }
+    figure{ margin:0; padding:0; position:relative; overflow:hidden; border-radius:16px; border:1px solid rgba(160,124,255,.35);
+            background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04)); }
+    figure img{ display:block; width:100%; height:auto; transform: scale(.96) translateY(16px); opacity:0;
+                 transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s; }
+    figure.revealed img{ transform: none; opacity:1; }
+    figure figcaption{ position:absolute; left:0; bottom:0; right:0; padding:10px 12px; font-size:12px; color:#eee;
+                       background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.24)); }
+
+    /* Code gate */
+    .gate{ position:fixed; inset:0; display:grid; place-items:center; background: linear-gradient(180deg, rgba(14,7,32,.84), rgba(14,7,32,.76));
+            backdrop-filter: blur(4px); z-index:50; }
+    .panel{ width:min(420px, 92vw); background:linear-gradient(180deg, rgba(26,16,54,.88), rgba(26,16,54,.78));
+             border:1px solid rgba(160,124,255,.45); border-radius:20px; box-shadow: var(--shadow); padding:16px; }
+    .panel h2{ text-align:center; margin:6px 0 8px }
+    .panel p{ text-align:center; color:var(--violet-100); margin:6px 0 12px }
+    .row{ display:grid; grid-template-columns:1fr .7fr; gap:10px; }
+    input[type="tel"]{ width:100%; padding:14px 12px; border-radius:12px; border:1px solid rgba(160,124,255,.5); background:rgba(255,255,255,.08); color:#fff; font-size:16px; letter-spacing:1px }
+    .error{ color:#ffb3cc; font-size:13px; text-align:center; min-height:18px }
+    .remember{ display:flex; align-items:center; gap:10px; font-size:13px; color:var(--violet-100); justify-content:center }
+    .shake{ animation: shake .3s both }
+    @keyframes shake{ 10%, 90% { transform: translateX(-1px); } 20%, 80% { transform: translateX(2px); } 30%, 50%, 70% { transform: translateX(-4px); } 40%, 60% { transform: translateX(4px); } }
+
+    .hidden{ display:none !important }
+    @media (prefers-reduced-motion: reduce){
+      .sky, .sparkles, .sheen { animation: none !important }
+      figure img { transition: none }
+    }
+  </style>
+</head>
+<body>
+  <!-- Glimmering aurora -->
+  <div class="sky" aria-hidden="true">
+    <span style="top:4%; left:-8%; --dur:48s; --rot:8deg; --sk:-8deg;"></span>
+    <span style="top:-6%; right:-6%; --dur:58s; --rot:-6deg; --sk:6deg;"></span>
+    <span style="bottom:-4%; left:-10%; --dur:52s; --rot:10deg; --sk:-6deg;"></span>
+    <span style="top:24%; left:10%; --dur:46s; --rot:-12deg; --sk:10deg;"></span>
+    <span style="bottom:4%; right:-4%; --dur:60s; --rot:6deg; --sk:-8deg;"></span>
+  </div>
+  <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+  <div class="sheen" aria-hidden="true"></div>
+
+  <!-- Passcode Gate -->
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gtitle">
+    <div class="panel">
+      <h2 id="gtitle">Jeje’s Surprise</h2>
+      <p><em>Hint:</em> Two hearts, eight digits. Start at the <strong>day</strong>, then the <strong>month</strong>, then the <strong>year</strong> when we began — no spaces or slashes.</p>
+      <div class="row">
+        <input id="code" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="8" placeholder="••••••••" aria-label="Access code">
+        <button class="btn" id="unlock">Unlock</button>
+      </div>
+      <label class="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+      <div id="err" class="error" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="viewport">
+    <div class="wrap">
+      <section class="card title" aria-label="Intro">
+        <h1>Our 2<sup>nd</sup> Anniversary</h1>
+        <p class="tag">A glimmering little love note — and a dinner invite to WabiSabi at MD Place.</p>
+        <div class="note">
+          <p><strong>Dear Jeje,</strong></p>
+          <p>Two trips around the sun with you — and I’m still giddy like day one. Let’s make tonight about us: unhurried conversation, clinking glasses, and all the little smiles that say “I’m home.”</p>
+          <p>Would you join me for a cozy dinner date?</p>
+          <div class="btns">
+            <a id="mapsLink" class="btn" target="_blank" rel="noopener">Open in Google Maps</a>
+            <button id="shareBtn" class="btn secondary">Share</button>
+          </div>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M7 10h5v5H7z"/><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 14H5V9h14v9Z"/></svg>
+          <div>
+            <strong>Date & Time</strong>
+            <div id="whenText">Sat, Sep 6, 2025 · 7:00 PM</div>
+          </div>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5Z"/></svg>
+          <div>
+            <strong>Place</strong>
+            <div>WabiSabi · MD Place</div>
+            <a id="mapsLink2" class="btn secondary" style="margin-top:8px" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="photos" aria-label="Our moments">
+      <figure>
+        <img src="img/photo1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 1 (placeholder)">
+        <figcaption>“You, me, and the first laugh of the night.”</figcaption>
+      </figure>
+      <figure>
+        <img src="img/photo2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 2 (placeholder)">
+        <figcaption>Somewhere between shy smiles and forever.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/photo3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 3 (placeholder)">
+        <figcaption>Hands intertwined, city lights agreeing with us.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/photo4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 4 (placeholder)">
+        <figcaption>A quiet moment that said everything.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/photo5.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 5 (placeholder)">
+        <figcaption>Two hearts, one favorite corner.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/photo6.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Our photo 6 (placeholder)">
+        <figcaption>Here’s to our next thousand small adventures.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <script>
+    // --- Config ---
+    const CONFIG = {
+      herName: "Jeje",
+      yourName: "CJ",
+      dateTime: "2025-09-06T19:00",
+      placeLabel: "WabiSabi · MD Place",
+      mapLink: "https://maps.google.com/?q=WabiSabi%20MD%20Place",
+      note: "Our 2nd anniversary dinner at WabiSabi (MD Place). I can’t wait to celebrate with you! 💜",
+      passcode: "29082023"
+    };
+
+    // iOS viewport fix
+    function setVh(){
+      document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+    }
+    window.addEventListener('resize', setVh); setVh();
+
+    // Sparkles
+    (function sparkles() {
+      const host = document.getElementById('sparkles');
+      const N = 90;
+      for (let i=0;i<N;i++) {
+        const s = document.createElement('i');
+        s.style.setProperty('--x', Math.random()*100 + 'vw');
+        s.style.setProperty('--y', Math.random()*100 + 'vh');
+        s.style.setProperty('--s', (0.6 + Math.random()*1.4).toFixed(2));
+        s.style.setProperty('--r', Math.random().toFixed(2));
+        host.appendChild(s);
+      }
+    })();
+
+    // Gate
+    const gate = document.getElementById('gate');
+    const codeInput = document.getElementById('code');
+    const err = document.getElementById('err');
+    const remember = document.getElementById('remember');
+    function unlockIfRemembered(){ if(localStorage.getItem('anniv_unlocked') === '1') gate.classList.add('hidden'); }
+    function tryUnlock() {
+      const val = codeInput.value.trim();
+      if (val === CONFIG.passcode) {
+        if (remember.checked) localStorage.setItem('anniv_unlocked', '1');
+        gate.classList.add('hidden');
+      } else {
+        err.textContent = "That didn’t match — think of the day we began (DDMMYYYY).";
+        gate.querySelector('.panel').classList.remove('shake'); void gate.offsetWidth; gate.querySelector('.panel').classList.add('shake');
+        setTimeout(()=> err.textContent = "", 2800);
+      }
+    }
+    document.getElementById('unlock').addEventListener('click', tryUnlock);
+    codeInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') tryUnlock(); });
+    unlockIfRemembered();
+
+    // Setup UI
+    function fmtDate(d){ return d.toLocaleString(undefined, {weekday:'short', month:'short', day:'numeric'}) + " · " + d.toLocaleTimeString(undefined, {hour:'numeric', minute:'2-digit'}); }
+    function updateUI(){
+      document.getElementById('mapsLink').href = CONFIG.mapLink;
+      document.getElementById('mapsLink2').href = CONFIG.mapLink;
+      const start = new Date(CONFIG.dateTime);
+      document.getElementById('whenText').textContent = fmtDate(start);
+      const text = `Our 2nd anniversary dinner at ${CONFIG.placeLabel} — ${fmtDate(start)}.\n${CONFIG.note}\n\nMaps: ${CONFIG.mapLink}`;
+      document.getElementById('shareBtn').addEventListener('click', async ()=>{
+        try{ if(navigator.share){ await navigator.share({title:"Anniversary Dinner", text, url: location.href}); } else { await navigator.clipboard.writeText(text + "\n" + location.href); alert("Copied details to clipboard 💜"); } }catch(e){}
+      });
+    }
+    updateUI();
+
+    // Photo reveal one-by-one with small stagger
+    const figures = Array.from(document.querySelectorAll('figure'));
+    const io = new IntersectionObserver((entries)=>{
+      const toReveal = entries.filter(e=> e.isIntersecting && !e.target.classList.contains('revealed')).map(e=> e.target);
+      toReveal.sort((a,b)=> figures.indexOf(a) - figures.indexOf(b));
+      toReveal.forEach((el, idx)=> setTimeout(()=> el.classList.add('revealed'), 140*idx));
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.33 });
+    figures.forEach(f=> io.observe(f));
+  </script>
+</body>
+</html>
